@@ -1,0 +1,218 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnalisation de Flasques - Hidden Distillery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-image: url('image1.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+        .logo {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        .marquee {
+            background-color: #ffd700;
+            color: black;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .examples {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .example {
+            flex: 1 1 300px;
+            margin: 10px;
+            text-align: center;
+        }
+        .example img {
+            max-width: 100%;
+            height: auto;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Hidden Distillery Logo" class="logo">
+        <h1>Personnalisez Vos Flasques de Spiritueux en Inox</h1>
+        <p>Dès 15 exemplaires, pour entreprises, associations, bars, restaurants et particuliers.</p>
+    </header>
+
+    <div class="marquee">
+        <span>promotion actuelle : flasques 200 ml dès 19,90 € HT pour 50 exemplaires</span>
+    </div>
+
+    <section id="description">
+        <h2>Notre Service de Personnalisation</h2>
+        <p>Chez Hidden Distillery, nous vous proposons de personnaliser des flasques de spiritueux en Inox grâce à notre imprimante jet d'encre UV. Disponibles en deux tailles : 500 ml et 200 ml, ces flasques peuvent être remplies au choix avec du rhum, du gin, de la vodka ou de la liqueur.</p>
+        <p>La personnalisation s'effectue sur la face principale en intégralité. Il suffit de nous fournir votre fichier graphique en haute définition (HD).</p>
+        <p>Ce service est idéal pour :</p>
+        <ul>
+            <li>Les entreprises : cadeaux ou événements</li>
+            <li>Les associations</li>
+            <li>Les bars et restaurants</li>
+            <li>Les particuliers : mariages, départs en retraite, cousinades, fêtes de famille, etc.</li>
+        </ul>
+    </section>
+
+    <section id="video">
+        <h2>Voyez Notre Imprimante en Action</h2>
+        <div class="video-container">
+            <video width="600" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </div>
+    </section>
+
+    <section id="examples">
+        <h2>Exemples de Réalisations</h2>
+        <div class="examples">
+            <div class="example">
+                <img src="image2.png" alt="Exemple de flasque pour événement familial">
+                <p>Exemple pour une cousinade (événement familial)</p>
+            </div>
+            <div class="example">
+                <img src="image3.png" alt="Exemple de flasque 500ml pour un bar">
+                <p>Exemple de flasque 500 ml pour un bar</p>
+            </div>
+            <div class="example">
+                <img src="image4.png" alt="Exemple de flasque 200ml pour un cadeau entreprise">
+                <p>Exemple de flasque 200 ml pour un cadeau d'entreprise</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="devis">
+        <h2>Demande de Devis</h2>
+        <form action="mailto:direction@hidden-distillery.fr" method="post" enctype="text/plain">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Téléphone :</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="quantity">Quantité souhaitée :</label>
+            <input type="number" id="quantity" name="quantity" min="15" required>
+
+            <label for="size">Taille de la flasque :</label>
+            <select id="size" name="size" required>
+                <option value="200ml">200 ml</option>
+                <option value="500ml">500 ml</option>
+            </select>
+
+            <label for="spirit">Spiritueux :</label>
+            <select id="spirit" name="spirit" required>
+                <option value="rhum">Rhum</option>
+                <option value="gin">Gin</option>
+                <option value="vodka">Vodka</option>
+                <option value="liqueur">Liqueur</option>
+            </select>
+
+            <label for="message">Message / Détails :</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <button type="submit">Envoyer la Demande</button>
+        </form>
+    </section>
+
+    <footer>
+        <p><a href="https://www.hidden-distillery.fr" target="_blank" rel="noopener noreferrer">Visiter notre site principal</a></p>
+        <p>&copy; 2026 Hidden Distillery. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+```
